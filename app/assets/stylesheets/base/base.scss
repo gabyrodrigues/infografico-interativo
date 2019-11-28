@@ -1,0 +1,75 @@
+@font-face {
+   font-family: 'Typo Grotesk';
+   src: url(asset-path('typo-grotesk/100.otf')) format("opentype");
+   font-weight: 100;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Typo Grotesk';
+   src: url(asset-path('typo-grotesk/100-italic.otf')) format("opentype");
+   font-weight: 100;
+   font-style: italic;
+}
+
+@font-face {
+   font-family: 'Typo Grotesk';
+   src: url(asset-path('typo-grotesk/400.otf')) format("opentype");
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Typo Grotesk';
+   src: url(asset-path('typo-grotesk/400-italic.otf')) format("opentype");
+   font-weight: 400;
+   font-style: italic;
+}
+
+@font-face {
+   font-family: 'Typo Grotesk';
+   src: url(asset-path('typo-grotesk/700.otf')) format("opentype");
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Typo Grotesk';
+   src: url(asset-path('typo-grotesk/700-italic.otf')) format("opentype");
+   font-weight: 700;
+   font-style: italic;
+}
+
+@font-face {
+   font-family: 'Typo Grotesk';
+   src: url(asset-path('typo-grotesk/900.otf')) format("opentype");
+   font-weight: 900;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Typo Grotesk';
+   src: url(asset-path('typo-grotesk/900-italic.otf')) format("opentype");
+   font-weight: 900;
+   font-style: italic;
+}
+
+.page-header {
+   background-color: #00171f;
+   min-height: 30vh;
+   padding: 20px;
+   .page-title {
+      width: 50%;
+      font-family: 'Typo Grotesk';
+      font-weight: 700;
+      color: #f44d00;
+      text-align: left;
+      font-size: 60px;
+      text-transform: uppercase;
+   }
+}
+
+.page-footer {
+   background-color: #00171f;
+   min-height: 15vh;
+}
