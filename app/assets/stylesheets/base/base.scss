@@ -109,35 +109,16 @@ body {
          .food-img {
             width: 50px;
             height: auto;
-         }
-      }
-   }
+            display: inline-block;
+            animation: rotation 1.5s infinite linear;
 
-   .food-grid {
-      margin-top: 30px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-column-gap: 20px;
-      grid-row-gap: 40px;
-      justify-items: center;
-      .food {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         
-         .food-div {
-            width: 90px;
-            height: 90px;
-            background-color: #ffcb03;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 10px;
-
-            .food-img {
-               width: 50px;
-               height: auto;
+            @keyframes rotation {
+               50% {
+                  transform: rotate(30deg);
+               }
+               100% {
+                  transform: rotate(0deg);
+               }
             }
          }
       }
@@ -205,8 +186,70 @@ body {
    }
 }
 
-.imc-container {
-   .imc-fields {
-      display: flex;
+.food-form {
+   background-color: #ffdc73;
+   padding: 20px;
+
+   .food-grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 40px;
+      justify-items: center;
+      .food {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         
+         .food-div {
+            width: 90px;
+            height: 90px;
+            background-color: #ffcb03;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .food-img {
+               width: 50px;
+               height: auto;
+            }
+         }
+      }
+   }
+
+   .imc-container {
+      .imc-title {
+         font-family: 'Typo Grotesk';
+         margin: 30px 0;
+      }
+      .imc-fields {
+         display: flex;
+         margin-bottom: 60px;
+
+         .form-title {
+            margin-right: 10px;
+         }
+
+         .input-imc {
+            border: none;
+            height: 35px;
+            max-width: 200px;
+            padding: 10px;
+         }
+      }
+   }
+   .btn-calcular {
+      background-color: #f44d00;
+      padding: 10px 50px;
+      align-self: center;
+      position: static;
+      font-family: "Typo Grotesk";
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #fff;
+      border: none;
    }
 }

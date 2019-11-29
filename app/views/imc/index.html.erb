@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Hábitos saudáveis e IMC</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-	<header class="page-header d-flex justify-content-end">
-		<h1 class="page-title text-right">Hábitos saudáveis <br> e IMC</h1>
-	</header>
-	<div class="div-container">
+	<head>
+		<title>Hábitos saudáveis e IMC</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<header class="page-header d-flex justify-content-end">
+			<h1 class="page-title text-right">Hábitos saudáveis <br> e IMC</h1>
+		</header>
+		<div class="div-container">
 
-		<div class="row justify-content-end">
-			<div class="col-lg-10 text-right">
-				<p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div class="row justify-content-end">
+				<div class="col-lg-10 text-right">
+					<p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-				<div class="food-container d-flex justify-content-end">
-					<div class="food banana">
-						<img alt="banana" class="food-img" src="<%= image_path('banana.png') %>">
-					</div>
-					<div class="food batata">
-						<img alt="batata" class="food-img" src="<%= image_path('batata-doce.png') %>">
-					</div>
-					<div class="food peixe">
-						<img alt="peixe" class="food-img" src="<%= image_path('peixe.png') %>">
-					</div>
-					<div class="food peixe">
-						<img alt="banana" class="food-img" src="<%= image_path('banana.png') %>">
-					</div>
-					<div class="food peixe">
-						<img alt="peixe" class="food-img" src="<%= image_path('peixe.png') %>">
+					<div class="food-container d-flex justify-content-end">
+						<div class="food banana">
+							<img alt="banana" class="food-img" src="<%= image_path('banana.png') %>">
+						</div>
+						<div class="food batata">
+							<img alt="batata" class="food-img" src="<%= image_path('batata-doce.png') %>">
+						</div>
+						<div class="food peixe">
+							<img alt="peixe" class="food-img" src="<%= image_path('peixe.png') %>">
+						</div>
+						<div class="food peixe">
+							<img alt="banana" class="food-img" src="<%= image_path('banana.png') %>">
+						</div>
+						<div class="food peixe">
+							<img alt="peixe" class="food-img" src="<%= image_path('peixe.png') %>">
+						</div>
 					</div>
 				</div>
-			</div>
-		</dic>
+			</dic>
 
-	</div>
-	<footer class="page-footer d-flex">
-		<!-- <a href="#" class="btn-start" role="button">Iniciar</a> -->
-		<%= link_to 'Iniciar', formulario_imc_index_path, class: "btn-start" %>
-	</footer>
-</body>
+		</div>
+		<footer class="page-footer d-flex">
+			<!-- <a href="#" class="btn-start" role="button">Iniciar</a> -->
+			<%= link_to 'Iniciar', formulario_imc_index_path, class: "btn-start" %>
+		</footer>
+	</body>
 </html>

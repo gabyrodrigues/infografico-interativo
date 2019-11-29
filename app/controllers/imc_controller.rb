@@ -8,6 +8,6 @@ class ImcController < ApplicationController
 
 	def calcular
 		raise params.inspect
-		render formulario_imc_index_path
+		redirect_to resultado_imc_index_path
 	end
 end

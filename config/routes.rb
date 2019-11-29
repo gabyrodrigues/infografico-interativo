@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   	collection do
         match 'formulario', via: [:get, :post]
         match 'calcular', via: [:get, :post]
+        match 'resultado', via: [:get, :post]
     end
   end
   root to: 'imc#index'

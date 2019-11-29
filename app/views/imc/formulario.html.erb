@@ -1,5 +1,5 @@
-<div class="div-container container">
-	<div class="food-form">
+<!-- <div class="div-container container"> -->
+	<div class="food-form text-center">
 		<div class="food-grid">
 			<div class="food banana text-center">
 				<div class="food-div">
@@ -67,15 +67,23 @@
 		</div>
 
 		<div class="imc-container">
-			<h1 class="text-center">Agora vamos calcular o seu IMC</h1>
+			<h3 class="imc-title text-center">Agora vamos calcular o seu IMC</h3>
 			<div class="imc-fields">
-				<%= number_field_tag :altura, nil, class: "input", id: "imc_altura" %>
-				<%= number_field_tag :peso, nil, class: "input", id: "imc_peso" %>
+				<div class="row w-100">
+					<div class="col-lg-6 text-center">
+						<span class="form-title">Sua altura:</span>
+						<%= number_field_tag :altura, nil, class: "input-imc", id: "imc_altura" %>
+					</div>
+					<div class="col-lg-6 text-center">
+						<span class="form-title">Seu peso:</span>
+						<%= number_field_tag :peso, nil, class: "input-imc", id: "imc_peso" %>
+					</div>
+				</div>
 			</div>
 		</div>
-		<button class="btn btn-primary" id="analisar_dados" onclick="sendFood();">Analisar dados</button>
+		<button class="btn-calcular" id="analisar_dados" onclick="sendFood();">Analisar dados</button>
 	</div>
-</div>
+<!-- </div> -->
 
 
 <script type="text/javascript">
@@ -135,7 +143,7 @@
     function sendFood() {
     	let imc_altura = $("#imc_altura").val();
 		let imc_peso = $("#imc_peso").val();
-		
+
     	$.ajax({
         	url: '/imc/calcular',
         	type: 'GET',
