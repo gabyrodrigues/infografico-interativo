@@ -7,7 +7,7 @@ class ImcController < ApplicationController
 	end
 
 	def calcular
-		raise params[:banana]
+		raise params.inspect
 		render formulario_imc_index_path
 	end
 end
