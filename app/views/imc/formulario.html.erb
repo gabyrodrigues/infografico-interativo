@@ -1,0 +1,110 @@
+<div class="div-container container">
+	<div class="food-grid">
+		<div class="food banana text-center">
+			<div class="food-div">
+				<img alt="banana" class="food-img" src="<%= image_path('banana.png') %>">
+			</div>
+
+			<div class="slide-container text-center">
+			  <!-- <input type="range" min="0" max="7" value="0" class="slider" id="myRange">
+			  <p><span id="demo"></span> vez(es)</p> -->
+
+			  <%= range_field_tag :banana, 0, min: 0, max: 7, class: "slider", :id=>"banana-range" %>
+			  <p><span id="target">0</span> vez(es)</p>
+			</div>
+		</div>
+		<div class="food batata text-center">
+			<div class="food-div">
+				<img alt="batata" class="food-img" src="<%= image_path('batata-doce.png') %>">
+			</div>
+		</div>
+		<div class="food peixe text-center">
+			<div class="food-div">
+				<img alt="peixe" class="food-img" src="<%= image_path('peixe.png') %>">
+			</div>
+		</div>
+		<div class="food fritura text-center">
+			<div class="food-div">
+				<img alt="frango frito" class="food-img" src="<%= image_path('frito.png') %>">
+			</div>
+		</div>
+		<div class="food refri text-center">
+			<div class="food-div">
+				<img alt="refrigerante" class="food-img" src="<%= image_path('refri.png') %>">
+			</div>
+		</div>
+		<div class="food pizza text-center">
+			<div class="food-div">
+				<img alt="pizza" class="food-img" src="<%= image_path('pizza.png') %>">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+	// var slider = document.getElementById("banana-range");
+	// var output = document.getElementById("demo");
+	// output.innerHTML = slider.value;
+
+	// slider.oninput = function() {
+	//   output.innerHTML = this.value;
+	// }
+
+	// let banana_range = $("#banana-range");
+	// let banana;
+
+	// banana_range.on('input', function() { 
+ //        banana = $(this).val();
+ //        $("#target").html(banana);
+ //        // $.ajax({
+ //        //     url: '/imc/calcular',
+ //        //     type: 'GET',
+ //        //     data: {banana: banana}
+ //        // })
+ //        // console.log(banana);
+ //    });
+
+	// $(document).ready(function(){
+	// 	let banana_range = $("#banana-range");
+	//     var banana = 0;
+
+	//     function calcFood() {
+	//         var banana = $(this).val();
+	//         $("#target").html(banana);
+
+	//         // console.log(banana);
+	//     };
+
+	//     banana_range.on('input', calcFood);
+
+	//     function sendFood() {
+	//     	banana_range.on('input', calcFood);
+	//     	banana_range.on('input', calcFood);
+	//     }
+	// });
+
+	let banana_range = $("#banana-range");
+	var banana = 0;
+
+	banana_range.on('input', function() { 
+        banana = $(this).val();
+        $("#target").html(banana);
+        sendFood();
+        // $.ajax({
+        //     url: '/imc/calcular',
+        //     type: 'GET',
+        //     data: {banana: banana}
+        // })
+        // console.log(banana);
+    });
+
+    function sendFood() {
+    	$.ajax({
+        	url: '/imc/calcular',
+        	type: 'GET',
+        	data: {banana: banana}
+    	})
+    }
+
+</script>
