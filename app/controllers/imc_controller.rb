@@ -91,6 +91,7 @@ class ImcController < ApplicationController
 			@result_pizza = "parabéns, pizza nenhuma vez, você é saudável"
 		end
 
-		render :partial => 'resultado'
+		#render :partial => 'resultado'
+		render resultado_imc_index_path
 	end
 end

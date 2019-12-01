@@ -1,0 +1,26 @@
+<div class="div-container">
+
+	<div class="row justify-content-end">
+		<div class="col-lg-12 text-center">
+			<h1>Parabéns, arrasou!</h1>
+			<p>Poxa o seu imc é <%= number_with_precision(@imc, :precision => 2, separator: ",", scale: 2, :delimiter => '.') %></p>
+			<%# raise @result_imc.inspect %>
+			<h2><%= @result_imc %></h2>
+
+			<p><%= @result_banana %></p>
+			<p><%= @result_batata %></p>
+			<p><%= @result_peixe %></p>
+
+			<p><%= @result_fritura %></p>
+			<p><%= @result_refri %></p>
+			<p><%= @result_pizza %></p>
+
+			<%= link_to "Voltar", imc_index_path, class: 'btn-voltar' %>
+		</div>
+	</dic>
+
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
