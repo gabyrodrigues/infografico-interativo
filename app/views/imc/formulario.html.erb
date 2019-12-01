@@ -1,89 +1,94 @@
-<!-- <div class="div-container container"> -->
-	<div class="food-form text-center">
-		<div class="food-grid">
-			<div class="food banana text-center">
-				<div class="food-div">
-					<img alt="banana" class="food-img" src="<%= image_path('banana.png') %>">
-				</div>
-
-				<div class="slide-container text-center">
-					<!-- <input type="range" min="0" max="7" value="0" class="slider" id="myRange">
-					<p><span id="demo"></span> vez(es)</p> -->
-
-					<%= range_field_tag :banana, 0, min: 0, max: 7, class: "slider", id: "banana-range" %>
-					<p><span id="target-banana">0</span> vez(es)</p>
-				</div>
-			</div>
-			<div class="food batata text-center">
-				<div class="food-div">
-					<img alt="batata" class="food-img" src="<%= image_path('batata-doce.png') %>">
-				</div>
-
-				<div class="slide-container text-center">
-					<%= range_field_tag :batata, 0, min: 0, max: 7, class: "slider", id: "batata-range" %>
-					<p><span id="target-batata">0</span> vez(es)</p>
-				</div>
-			</div>
-			<div class="food peixe text-center">
-				<div class="food-div">
-					<img alt="peixe" class="food-img" src="<%= image_path('peixe.png') %>">
-				</div>
-
-				<div class="slide-container text-center">
-					<%= range_field_tag :peixe, 0, min: 0, max: 7, class: "slider", id: "peixe-range" %>
-					<p><span id="target-peixe">0</span> vez(es)</p>
-				</div>
-			</div>
-			<div class="food fritura text-center">
-				<div class="food-div">
-					<img alt="frango frito" class="food-img" src="<%= image_path('frito.png') %>">
-				</div>
-
-				<div class="slide-container text-center">
-					<%= range_field_tag :fritura, 0, min: 0, max: 7, class: "slider", id: "fritura-range" %>
-					<p><span id="target-fritura">0</span> vez(es)</p>
-				</div>
-			</div>
-			<div class="food refri text-center">
-				<div class="food-div">
-					<img alt="refrigerante" class="food-img" src="<%= image_path('refri.png') %>">
-				</div>
-
-				<div class="slide-container text-center">
-					<%= range_field_tag :refri, 0, min: 0, max: 7, class: "slider", id: "refri-range" %>
-					<p><span id="target-refri">0</span> vez(es)</p>
-				</div>
-			</div>
-			<div class="food pizza text-center">
-				<div class="food-div">
-					<img alt="pizza" class="food-img" src="<%= image_path('pizza.png') %>">
-				</div>
-
-				<div class="slide-container text-center">
-					<%= range_field_tag :pizza, 0, min: 0, max: 7, class: "slider", id: "pizza-range" %>
-					<p><span id="target-pizza">0</span> vez(es)</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="imc-container">
-			<h3 class="imc-title text-center">Agora vamos calcular o seu IMC</h3>
-			<div class="imc-fields">
-				<div class="row w-100">
-					<div class="col-lg-6 text-center">
-						<span class="form-title">Sua altura:</span>
-						<%= number_field_tag :altura, nil, class: "input-imc", id: "imc_altura" %>
+<div id="retorno_resultado">
+	<%= form_tag({controller: "imc", action: "calcular"}, method: "post") do %>
+		<div class="food-form text-center">
+			<div class="food-grid">
+				<div class="food banana text-center">
+					<div class="food-div">
+						<img alt="banana" class="food-img" src="<%= image_path('banana.png') %>">
 					</div>
-					<div class="col-lg-6 text-center">
-						<span class="form-title">Seu peso:</span>
-						<%= number_field_tag :peso, nil, class: "input-imc", id: "imc_peso" %>
+
+					<div class="slide-container text-center">
+						<!-- <input type="range" min="0" max="7" value="0" class="slider" id="myRange">
+						<p><span id="demo"></span> vez(es)</p> -->
+
+						<%= range_field_tag :banana, 0, min: 0, max: 7, class: "slider", id: "banana-range" %>
+						<p><span id="target-banana">0</span> vez(es)</p>
+					</div>
+				</div>
+				<div class="food batata text-center">
+					<div class="food-div">
+						<img alt="batata" class="food-img" src="<%= image_path('batata-doce.png') %>">
+					</div>
+
+					<div class="slide-container text-center">
+						<%= range_field_tag :batata, 0, min: 0, max: 7, class: "slider", id: "batata-range" %>
+						<p><span id="target-batata">0</span> vez(es)</p>
+					</div>
+				</div>
+				<div class="food peixe text-center">
+					<div class="food-div">
+						<img alt="peixe" class="food-img" src="<%= image_path('peixe.png') %>">
+					</div>
+
+					<div class="slide-container text-center">
+						<%= range_field_tag :peixe, 0, min: 0, max: 7, class: "slider", id: "peixe-range" %>
+						<p><span id="target-peixe">0</span> vez(es)</p>
+					</div>
+				</div>
+				<div class="food fritura text-center">
+					<div class="food-div">
+						<img alt="frango frito" class="food-img" src="<%= image_path('frito.png') %>">
+					</div>
+
+					<div class="slide-container text-center">
+						<%= range_field_tag :fritura, 0, min: 0, max: 7, class: "slider", id: "fritura-range" %>
+						<p><span id="target-fritura">0</span> vez(es)</p>
+					</div>
+				</div>
+				<div class="food refri text-center">
+					<div class="food-div">
+						<img alt="refrigerante" class="food-img" src="<%= image_path('refri.png') %>">
+					</div>
+
+					<div class="slide-container text-center">
+						<%= range_field_tag :refri, 0, min: 0, max: 7, class: "slider", id: "refri-range" %>
+						<p><span id="target-refri">0</span> vez(es)</p>
+					</div>
+				</div>
+				<div class="food pizza text-center">
+					<div class="food-div">
+						<img alt="pizza" class="food-img" src="<%= image_path('pizza.png') %>">
+					</div>
+
+					<div class="slide-container text-center">
+						<%= range_field_tag :pizza, 0, min: 0, max: 7, class: "slider", id: "pizza-range" %>
+						<p><span id="target-pizza">0</span> vez(es)</p>
 					</div>
 				</div>
 			</div>
+
+			<div class="imc-container">
+				<h3 class="imc-title text-center">Agora vamos calcular o seu IMC</h3>
+				<div class="imc-fields">
+					<div class="row w-100">
+						<div class="col-lg-6 text-center">
+							<span class="form-title">Seu peso:</span>
+							<%= number_field_tag :peso, nil, class: "input-imc", id: "imc_peso", required: true %>
+						</div>
+						<div class="col-lg-6 text-center">
+							<span class="form-title">Sua altura:</span>
+							<%= number_field_tag :altura, nil, step: :any, class: "input-imc", id: "imc_altura", required: true %>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="btn-calcular" id="analisar_dados" onclick="sendFood();">Analisar dados</button>
+			<%#= link_to(resultado_imc_index_path, class: 'btn-calcular', id: "analisar_dados" , onclick: 'sendFood();') do %>
+				<!-- Analisar dados -->
+			<%# end %>
 		</div>
-		<button class="btn-calcular" id="analisar_dados" onclick="sendFood();">Analisar dados</button>
-	</div>
-<!-- </div> -->
+	<% end %>
+</div>
 
 
 <script type="text/javascript">
@@ -95,48 +100,48 @@
 	let refri_range = $("#refri-range");
 	let pizza_range = $("#pizza-range");
 
-	let banana = 0;
-	let batata = 0;
-	let peixe = 0;
+	banana = 0;
+	batata = 0;
+	peixe = 0;
 
-	let fritura = 0;
-	let refri = 0;
-	let pizza = 0;
+	fritura = 0;
+	refri = 0;
+	pizza = 0;
 
 	banana_range.on('input', function() { 
         banana = $(this).val();
         $("#target-banana").html(banana);
-        sendFood();
+        
     });
 
     batata_range.on('input', function() { 
         batata = $(this).val();
         $("#target-batata").html(batata);
-        sendFood();
+        
     });
 
     peixe_range.on('input', function() { 
         peixe = $(this).val();
         $("#target-peixe").html(peixe);
-        sendFood();
+        
     });
 
     fritura_range.on('input', function() { 
         fritura = $(this).val();
         $("#target-fritura").html(fritura);
-        sendFood();
+        
     });
 
     refri_range.on('input', function() { 
         refri = $(this).val();
         $("#target-refri").html(refri);
-        sendFood();
+        
     });
 
     pizza_range.on('input', function() { 
         pizza = $(this).val();
         $("#target-pizza").html(pizza);
-        sendFood();
+        
     });
 
 
@@ -149,6 +154,9 @@
         	type: 'GET',
         	data: {banana: banana, batata: batata, peixe: peixe, fritura: fritura, refri: refri, pizza: pizza, imc_altura: imc_altura, imc_peso: imc_peso}
     	})
+    	.done(function(retorno){
+        	$("#retorno_resultado").html(retorno);
+      	});
     }
 
 </script>

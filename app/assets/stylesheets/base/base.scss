@@ -1,3 +1,5 @@
+@import "bootstrap"; 
+
 @font-face {
    font-family: 'Typo Grotesk';
    src: url(asset-path('typo-grotesk/100.otf')) format("opentype");
@@ -252,4 +254,16 @@ body {
       color: #fff;
       border: none;
    }
+}
+
+.btn-voltar {
+  background-color: #f44d00;
+  padding: 10px 50px;
+  align-self: center;
+  position: static;
+  font-family: "Typo Grotesk";
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
 }

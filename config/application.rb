@@ -1,4 +1,4 @@
-require_relative 'boot'
+require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
@@ -18,6 +18,9 @@ module InfograficoInterativo
 
  #    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 	# config.assets.precompile << /\.(?:svg|otf|eot|woff|ttf)$/
+
 	config.assets.paths << Rails.root.join("app", "assets", "fonts")
+	config.assets.precompile += [ 'imc.scss']
+
   end
 end
