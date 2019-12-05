@@ -56,6 +56,97 @@
    font-style: italic;
 }
 
+@font-face {
+   font-family: 'Teko';
+   src: url(asset-path('teko/300.ttf')) format("truetype");
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Teko';
+   src: url(asset-path('teko/400.ttf')) format("truetype");
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Teko';
+   src: url(asset-path('teko/500.ttf')) format("truetype");
+   font-weight: 500;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Teko';
+   src: url(asset-path('teko/600.ttf')) format("truetype");
+   font-weight: 600;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Teko';
+   src: url(asset-path('teko/700.ttf')) format("truetype");
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Roboto Condensed';
+   src: url(asset-path('roboto-condensed/300.ttf')) format("truetype");
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Roboto Condensed';
+   src: url(asset-path('roboto-condensed/400.ttf')) format("truetype");
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Roboto Condensed';
+   src: url(asset-path('roboto-condensed/700.ttf')) format("truetype");
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Lato';
+   src: url(asset-path('lato/100.ttf')) format("truetype");
+   font-weight: 100;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Lato';
+   src: url(asset-path('lato/300.ttf')) format("truetype");
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Lato';
+   src: url(asset-path('lato/400.ttf')) format("truetype");
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Lato';
+   src: url(asset-path('lato/700.ttf')) format("truetype");
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Lato';
+   src: url(asset-path('lato/900.ttf')) format("truetype");
+   font-weight: 900;
+   font-style: normal;
+}
+
 html {
   height: 100%;
   box-sizing: border-box;
@@ -74,19 +165,32 @@ body {
   min-height: 100%;
 }
 
+.d-grid {
+    display: grid;
+}
+
+.food-container.d-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 130px);
+    align-content: center;
+    justify-items: center;
+    grid-row-gap: 20px;
+    grid-column-gap: 10px;
+}
+
 .page-header {
    background-color: #00171f;
    min-height: 30vh;
    padding: 20px;
-   .page-title {
-      width: 50%;
-      font-family: 'Typo Grotesk';
-      font-weight: 700;
-      color: #f44d00;
-      text-align: left;
-      font-size: 60px;
-      text-transform: uppercase;
-   }
+
+    .page-title {
+        width: 60%;
+        font-family: 'Teko';
+        font-weight: 700;
+        color: #a5f3c1;
+        text-align: center;
+        font-size: 70px;
+    }
 }
 
 .div-container {
@@ -98,15 +202,15 @@ body {
       .food {
          width: 90px;
          height: 90px;
-         background-color: #ffcb03;
+         background-color: #3ca39f;
          border-radius: 50%;
          display: flex;
          justify-content: center;
          align-items: center;
 
-         &:not(:last-child) {
+         /*&:not(:last-child) {
             margin-right: 30px;
-         }
+         }*/
 
          .food-img {
             width: 50px;
