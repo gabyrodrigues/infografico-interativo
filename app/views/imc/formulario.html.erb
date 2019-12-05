@@ -1,91 +1,127 @@
-<div id="retorno_resultado">
+<div class="page page-formulario">
+	<header class="page-header">
+		<h1 class="page-title">QUESTIONÁRIO</h1>
+	</header>
 	<%= form_tag({controller: "imc", action: "calcular"}, method: "post") do %>
 		<div class="food-form text-center">
+			<p class="question">
+				Utilize os controles deslizantes para definir a frequência em que você come os seguintes
+				alimentos, sendo zero para nenhuma vez e 0 para todos os dias da semana.
+			</p>
 			<div class="food-grid">
 				<div class="food banana text-center">
+					<div class="food-title">
+						Banana
+					</div>
+
 					<div class="food-div">
 						<img alt="banana" class="food-img" src="<%= image_path('banana.png') %>">
 					</div>
 
 					<div class="slide-container text-center">
-						<!-- <input type="range" min="0" max="7" value="0" class="slider" id="myRange">
-						<p><span id="demo"></span> vez(es)</p> -->
-
 						<%= range_field_tag :banana, 0, min: 0, max: 7, class: "slider", id: "banana-range" %>
-						<p><span id="target-banana">0</span> vez(es)</p>
+						<p class="food-count"><span id="target-banana">0</span> vez(es)</p>
 					</div>
 				</div>
 				<div class="food batata text-center">
+					<div class="food-title">
+						Batata
+					</div>
+
 					<div class="food-div">
 						<img alt="batata" class="food-img" src="<%= image_path('batata-doce.png') %>">
 					</div>
 
 					<div class="slide-container text-center">
 						<%= range_field_tag :batata, 0, min: 0, max: 7, class: "slider", id: "batata-range" %>
-						<p><span id="target-batata">0</span> vez(es)</p>
+						<p class="food-count"><span id="target-batata">0</span> vez(es)</p>
 					</div>
 				</div>
 				<div class="food peixe text-center">
+					<div class="food-title">
+						Peixes
+					</div>
+
 					<div class="food-div">
 						<img alt="peixe" class="food-img" src="<%= image_path('peixe.png') %>">
 					</div>
 
 					<div class="slide-container text-center">
 						<%= range_field_tag :peixe, 0, min: 0, max: 7, class: "slider", id: "peixe-range" %>
-						<p><span id="target-peixe">0</span> vez(es)</p>
+						<p class="food-count"><span id="target-peixe">0</span> vez(es)</p>
 					</div>
 				</div>
 				<div class="food fritura text-center">
+					<div class="food-title">
+						Frituras
+					</div>
+
 					<div class="food-div">
 						<img alt="frango frito" class="food-img" src="<%= image_path('frito.png') %>">
 					</div>
 
 					<div class="slide-container text-center">
 						<%= range_field_tag :fritura, 0, min: 0, max: 7, class: "slider", id: "fritura-range" %>
-						<p><span id="target-fritura">0</span> vez(es)</p>
+						<p class="food-count"><span id="target-fritura">0</span> vez(es)</p>
 					</div>
 				</div>
 				<div class="food refri text-center">
+					<div class="food-title">
+						Refrigerantes
+					</div>
+
 					<div class="food-div">
 						<img alt="refrigerante" class="food-img" src="<%= image_path('refri.png') %>">
 					</div>
 
 					<div class="slide-container text-center">
 						<%= range_field_tag :refri, 0, min: 0, max: 7, class: "slider", id: "refri-range" %>
-						<p><span id="target-refri">0</span> vez(es)</p>
+						<p class="food-count"><span id="target-refri">0</span> vez(es)</p>
 					</div>
 				</div>
 				<div class="food pizza text-center">
+					<div class="food-title">
+						Pizzas
+					</div>
+
 					<div class="food-div">
 						<img alt="pizza" class="food-img" src="<%= image_path('pizza.png') %>">
 					</div>
 
 					<div class="slide-container text-center">
 						<%= range_field_tag :pizza, 0, min: 0, max: 7, class: "slider", id: "pizza-range" %>
-						<p><span id="target-pizza">0</span> vez(es)</p>
+						<p class="food-count"><span id="target-pizza">0</span> vez(es)</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="imc-container">
-				<h3 class="imc-title text-center">Agora vamos calcular o seu IMC</h3>
+				<p class="question">
+					Agora informe o seu peso e altura para que possamos calcular o seu Índice de Massa Corpórea e
+					realizar uma análise
+				</p>
 				<div class="imc-fields">
-					<div class="row w-100">
-						<div class="col-lg-6 text-center">
-							<span class="form-title">Seu peso:</span>
-							<%= number_field_tag :peso, nil, class: "input-imc", id: "imc_peso", required: true %>
+					<div class="row w-100 justify-content-center">
+						<div class="col-lg-4 text-center field">
+							<span class="form-title">Peso (kg):</span>
+							<%= number_field_tag :peso, nil, class: "input-imc", id: "imc_peso", required: true, placeholder: "ex: 60" %>
 						</div>
-						<div class="col-lg-6 text-center">
-							<span class="form-title">Sua altura:</span>
-							<%= number_field_tag :altura, nil, step: :any, class: "input-imc", id: "imc_altura", required: true %>
+						<div class="col-lg-4 text-center field">
+							<span class="form-title">Altura (cm):</span>
+							<%= number_field_tag :altura, nil, step: :any, class: "input-imc", id: "imc_altura", required: true, placeholder: "ex: 1,64" %>
 						</div>
 					</div>
 				</div>
 			</div>
-			<button class="btn-calcular" id="analisar_dados" onclick="sendFood();">Analisar dados</button>
+			<!-- <button class="btn-calcular" id="analisar_dados" onclick="sendFood();">Analisar dados</button> -->
 			<%#= link_to(resultado_imc_index_path, class: 'btn-calcular', id: "analisar_dados" , onclick: 'sendFood();') do %>
 				<!-- Analisar dados -->
 			<%# end %>
+			<footer class="page-footer">
+				<div class="row justify-content-center">
+					<button class="btn-calcular" id="analisar_dados" onclick="sendFood();">Analisar dados</button>
+				</div>
+			</footer>
 		</div>
 	<% end %>
 </div>
