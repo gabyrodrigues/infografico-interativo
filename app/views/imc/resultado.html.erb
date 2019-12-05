@@ -1,22 +1,153 @@
-<div class="div-container">
+<div class="page page-resultado">
+	<header class="page-header">
+		<h1 class="page-title">SEU IMC: <%= number_with_precision(@imc, :precision => 2, separator: ",", scale: 2, :delimiter  => '.') %></h1>
+		<div class="div-imc">
+			
+			<div class="bar-imc">
+				<div class="carinha-div imc-muito-abaixo">
+					<div class="carinha carinha-muito-abaixo">
+						<%= show_svg('carinha-decepcionada1.svg') %>
+					</div>
+					<p class="imc-title">< 17</p>
+				</div>
 
-	<div class="row justify-content-end">
-		<div class="col-lg-12 text-center">
-			<h1>Parabéns, arrasou!</h1>
-			<p>Poxa o seu imc é <%= number_with_precision(@imc, :precision => 2, separator: ",", scale: 2, :delimiter => '.') %></p>
-			<%# raise @result_imc.inspect %>
-			<h2><%= @result_imc %></h2>
+				<div class="imc-divider"></div>
 
-			<p><%= @result_banana %></p>
-			<p><%= @result_batata %></p>
-			<p><%= @result_peixe %></p>
+				<div class="carinha-div imc-abaixo">
+					<div class="carinha carinha-abaixo">
+						<%= show_svg('carinha-triste1.svg') %>
+					</div>
+					<p class="imc-title">>= 17 e >= 18,49</p>
+				</div>
 
-			<p><%= @result_fritura %></p>
-			<p><%= @result_refri %></p>
-			<p><%= @result_pizza %></p>
+				<div class="imc-divider"></div>
 
-			<%= link_to "Voltar", imc_index_path, class: 'btn-voltar' %>
+				<div class="carinha-div imc-normal">
+					<div class="carinha carinha-normal">
+						<%= show_svg('carinha-feliz.svg') %>
+					</div>
+					<p class="imc-title">>= 18,50 e >= 24,99</p>
+				</div>
+
+				<div class="imc-divider"></div>
+
+				<div class="carinha-div imc-soprepeso">
+					<div class="carinha carinha-sobrepeso">
+						<%= show_svg('carinha-triste2.svg') %>
+					</div>
+					<p class="imc-title">>= 25 e >= 29,99</p>
+				</div>
+
+				<div class="imc-divider"></div>
+
+				<div class="carinha-div imc-obeso">
+					<div class="carinha carinha-obeso">
+						<%= show_svg('carinha-decepcionada2.svg') %>
+					</div>
+					<p class="imc-title">> 30</p>
+				</div>
+			</div>
+
+			<div class="imc-result">
+				<% if @faixa_imc == "carinha-muito-abaixo" %>
+					<div class="carinha carinha-muito-abaixo">
+						<%= show_svg('carinha-decepcionada1.svg') %>
+					</div>
+				<% elsif @faixa_imc == "carinha-abaixo" %>
+					<div class="carinha carinha-abaixo">
+						<%= show_svg('carinha-triste1.svg') %>
+					</div>
+				<% elsif @faixa_imc == "carinha-normal" %>
+					<div class="carinha carinha-normal">
+						<%= show_svg('carinha-feliz.svg') %>
+					</div>
+				<% elsif @faixa_imc == "carinha-sobrepeso" %>
+					<div class="carinha carinha-muito-abaixo">
+						<%= show_svg('carinha-triste1.svg') %>
+					</div>
+				<% elsif @faixa_imc == "carinha-abaixo" %>
+					<div class="carinha carinha-obeso">
+						<%= show_svg('carinha-decepcionada1.svg') %>
+					</div>
+				<% end %>
+
+				<p class="imc-text"><%= @result_imc %></p>
+
+			</div>
 		</div>
-	</dic>
+	</header>
+
+	<!-- <div class="row justify-content-center"> -->
+		<div class="food-result">
+			<!-- <div class="col-lg-12 text-center"> -->
+				<div class="row">
+					<div class="col-lg-2">
+						<div class="food-container good">
+							<div class="food banana">
+								<img alt="banana" class="food-img" src="<%= image_path('banana.png') %>">
+							</div>
+							<div class="food batata">
+								<img alt="batata" class="food-img" src="<%= image_path('batata-doce.png') %>">
+							</div>
+							<div class="food peixe">
+								<img alt="peixe" class="food-img" src="<%= image_path('peixe.png') %>">
+							</div>
+
+							<!-- <div class="food fritura">
+								<img alt="fritura" class="food-img" src="<%#= image_path('frito.png') %>">
+							</div>
+							<div class="food pizza">
+								<img alt="pizza" class="food-img" src="<%#= image_path('pizza.png') %>">
+							</div>
+							<div class="food refri">
+								<img alt="refrigerante" class="food-img" src="<%#= image_path('refri.png') %>">
+							</div> -->
+						</div>
+					</div>
+					<div class="col-lg-10">
+						<p class="text-result"><%= @result_banana %></p>
+
+						<p class="text-result"><%= @result_batata %></p>
+
+						<p class="text-result"><%= @result_peixe %></p>
+					</div>
+				</div>
+
+				<div class="row mt-5">
+					<div class="col-lg-2">
+						<div class="food-container bad">
+							<div class="food fritura">
+								<img alt="fritura" class="food-img" src="<%= image_path('frito.png') %>">
+							</div>
+							<div class="food pizza">
+								<img alt="pizza" class="food-img" src="<%= image_path('pizza.png') %>">
+							</div>
+							<div class="food refri">
+								<img alt="refrigerante" class="food-img" src="<%= image_path('refri.png') %>">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-10">
+						<p class="text-result"><%= @result_fritura %></p>
+
+						<p class="text-result"><%= @result_refri %></p>
+
+						<p class="text-result"><%= @result_pizza %></p>
+					</div>
+				</div>
+			<!-- </div> -->
+		</div>
+	<!-- </div> -->
+
+	<footer class="page-footer">
+		<%= link_to "Menu", imc_index_path, class: 'btn-voltar' %>
+		<%= link_to "Refazer", formulario_imc_index_path, class: 'btn-voltar' %>
+	</footer>
 
 </div>
+
+<style type="text/css">
+	.<%= @faixa_imc %> .icon {
+		fill: #a1f3bf !important;
+	} 
+</style>

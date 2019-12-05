@@ -189,7 +189,7 @@ body {
 .page-footer {
 	background-color: #00171f;
 	height: 13vh;
-	position: absolute;
+	position: relative;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -353,6 +353,11 @@ body {
 		    align-items: center;
 		    justify-content: center;
 		    border: none;
+
+		    &:hover {
+	    		text-decoration: none;
+	    		background-color: rgba(165, 243, 193, 0.8);
+	    	}
 	   	}
 	}
 
@@ -396,6 +401,7 @@ body {
 
 	.page-footer {
 		bottom: -40px;
+		margin: 0 -60px;
 
 		.btn-voltar {
 			background-color: #f44d00;
@@ -407,7 +413,214 @@ body {
 			text-transform: uppercase;
 			color: #fff;
 			border: none;
+
+			&:hover {
+	    		text-decoration: none;
+	    		background-color: rgba(165, 243, 193, 0.8);
+	    	}
 		}
 	}
 
+}
+
+/*
+*
+* PÁGINA DE FORMULÁRIO
+*
+*/
+
+.page.page-resultado {
+	.page-header {
+	   	background-color: #02161e;
+	   	height: 100vh;
+	   	padding: 40px;
+	   	width: 100%;
+
+	    .page-title {
+	        font-family: 'Teko';
+	        font-weight: 700;
+	        color: #a3f7bf;
+	        text-align: center;
+	        font-size: 40px;
+	        margin: 0;
+	    }
+
+	    .div-imc {
+	    	border-top: 5px solid #fff;
+		    margin: 0 -40px;
+		    padding: 0 8%;
+		    margin-top: 30px;
+
+		    .bar-imc {
+		    	display: flex;
+	    		justify-content: space-between;
+	    		align-items: center;
+
+	    		.carinha-div {
+	    			display: flex;
+				    flex-direction: column;
+				    align-items: center;
+
+				    .carinha {
+			    		width: 100px;
+
+			    		.icon {
+			    			fill: #418786;
+			    		}
+
+			    		.icon-border {
+			    			fill: #09171e;
+			    		}
+
+			    		.icon-color2 {
+			    			fill: #a3f7bf;
+			    		}
+		    		}
+
+		    		.imc-title {
+		    			color: #418786;
+					    font-family: 'Teko';
+					    font-weight: 400;
+					    font-size: 20px;
+		    		}
+	    		}
+
+	    		.imc-divider {
+	    			content: '';
+					display: inline-block;
+					background: #fff;
+					margin: 0px 4px;
+					height: 40px;
+					width: 5px;
+					vertical-align: top;
+	    		}
+
+		    }
+
+		    .imc-result {
+				max-height: 300px;
+			    display: flex;
+			    align-items: center;
+			    /*margin-top: 5%;*/
+			    padding-top: 5%;
+    			box-sizing: border-box;
+
+			    .carinha {
+		    		width: 50%;
+		    		margin: 0;
+		    		margin-top: 3%;
+
+		    		.icon {
+		    			fill: #A8DCC0;
+		    		}
+
+		    		.icon-border {
+		    			fill: #09171e;
+		    		}
+
+		    		.icon-color2 {
+		    			fill: #a3f7bf;
+		    		}
+	    		}
+
+	    		.imc-title {
+	    			color: #418786;
+				    font-family: 'Teko';
+				    font-weight: 400;
+				    font-size: 20px;
+	    		}
+
+				.imc-text {
+					font-size: 16px;
+					font-family: 'Lato';
+					color: #fff;
+					width: 100%;
+					/*padding-left: 5%;*/
+					margin-left: -5%;
+				}
+			}
+	    }
+
+	}
+
+	.food-result {
+		padding: 40px 10%;
+		.food-container {
+		    /*display: flex;
+		    flex-direction: column;
+		    justify-content: space-between;
+		    align-content: space-between;
+    		align-items: center;*/
+		    height: 100%;
+		    padding: 20px;
+    		/*border-radius: 10%;*/
+    		display: grid;
+		    grid-template-columns: 1fr;
+		    justify-items: center;
+		    grid-template-rows: repeat(3, 1fr);
+		    align-items: center;
+		    grid-row-gap: 20px;
+
+		    &.good {
+		    	background-color: #29a19c;
+		    }
+
+		    &.bad {
+		    	background-color: #33415e;
+		    }
+
+		    .food {
+		    	.food-img {
+		    		width: 90px;
+		    		height: 90px;
+		    	}
+		    }
+
+		}
+	    .text-result {
+		    background-color: #02161e;
+		    color: #fff;
+		    font-family: 'Lato';
+		    font-size: 16px;
+		    padding: 20px;
+		    /*border-radius: 10%;*/
+		    margin: 0;
+
+		    &:last-child {
+		    	margin-bottom: 0;
+		    }
+
+		    &:not(:last-child) {
+		    	margin-bottom: 10px;
+		    }
+		}
+	}
+
+	.page-footer {
+		display: flex;
+		justify-content: space-between;
+
+		.btn-voltar {
+			font-family: 'Teko';
+		    color: #02161e;
+		    background-color: #a5f3c1;
+		    font-size: 22px;
+		    min-width: 200px;
+		    font-weight: 700;
+		    text-align: center;
+		    align-self: center;
+		    text-transform: uppercase;
+		    padding: 0;
+		    min-height: 50px;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    border: none;
+
+		    &:hover {
+	    		text-decoration: none;
+	    		background-color: rgba(165, 243, 193, 0.8);
+	    	}
+		}
+	}
 }
