@@ -65,13 +65,13 @@
 					<div class="carinha carinha-muito-abaixo">
 						<%= show_svg('carinha-triste1.svg') %>
 					</div>
-				<% elsif @faixa_imc == "carinha-abaixo" %>
+				<% elsif @faixa_imc == "carinha-obeso" %>
 					<div class="carinha carinha-obeso">
 						<%= show_svg('carinha-decepcionada1.svg') %>
 					</div>
 				<% end %>
 
-				<p class="imc-text"><%= @result_imc %></p>
+				<div class="imc-text"><%= @result_imc.html_safe %></div>
 
 			</div>
 		</div>
@@ -92,24 +92,14 @@
 							<div class="food peixe">
 								<img alt="peixe" class="food-img" src="<%= image_path('peixe.png') %>">
 							</div>
-
-							<!-- <div class="food fritura">
-								<img alt="fritura" class="food-img" src="<%#= image_path('frito.png') %>">
-							</div>
-							<div class="food pizza">
-								<img alt="pizza" class="food-img" src="<%#= image_path('pizza.png') %>">
-							</div>
-							<div class="food refri">
-								<img alt="refrigerante" class="food-img" src="<%#= image_path('refri.png') %>">
-							</div> -->
 						</div>
 					</div>
 					<div class="col-lg-10">
-						<p class="text-result"><%= @result_banana %></p>
+						<div class="text-result"><%= @result_banana.html_safe %></div>
 
-						<p class="text-result"><%= @result_batata %></p>
+						<div class="text-result"><%= @result_batata.html_safe %></div>
 
-						<p class="text-result"><%= @result_peixe %></p>
+						<div class="text-result"><%= @result_peixe.html_safe %></div>
 					</div>
 				</div>
 
@@ -119,20 +109,20 @@
 							<div class="food fritura">
 								<img alt="fritura" class="food-img" src="<%= image_path('frito.png') %>">
 							</div>
-							<div class="food pizza">
-								<img alt="pizza" class="food-img" src="<%= image_path('pizza.png') %>">
-							</div>
 							<div class="food refri">
 								<img alt="refrigerante" class="food-img" src="<%= image_path('refri.png') %>">
+							</div>
+							<div class="food pizza">
+								<img alt="pizza" class="food-img" src="<%= image_path('pizza.png') %>">
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-10">
-						<p class="text-result"><%= @result_fritura %></p>
+						<div class="text-result"><%= @result_fritura.html_safe %></div>
 
-						<p class="text-result"><%= @result_refri %></p>
+						<div class="text-result"><%= @result_refri.html_safe %></div>
 
-						<p class="text-result"><%= @result_pizza %></p>
+						<div class="text-result"><%= @result_pizza.html_safe %></div>
 					</div>
 				</div>
 			<!-- </div> -->

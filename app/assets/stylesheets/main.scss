@@ -463,6 +463,8 @@ body {
 
 				    .carinha {
 			    		width: 100px;
+			    		padding-top: 10%;
+    					padding-bottom: 10%;
 
 			    		.icon {
 			    			fill: #418786;
@@ -506,9 +508,8 @@ body {
     			box-sizing: border-box;
 
 			    .carinha {
-		    		width: 50%;
+		    		width: 100%;
 		    		margin: 0;
-		    		margin-top: 3%;
 
 		    		.icon {
 		    			fill: #A8DCC0;
@@ -531,12 +532,16 @@ body {
 	    		}
 
 				.imc-text {
-					font-size: 16px;
-					font-family: 'Lato';
-					color: #fff;
-					width: 100%;
-					/*padding-left: 5%;*/
-					margin-left: -5%;
+					p {
+						font-size: 16px;
+						font-family: 'Lato';
+						color: #fff;
+						width: 100%;
+						padding-left: 5%;
+						/*margin-left: -5%;*/
+						text-indent: 30px;
+    					text-align: justify;
+					}
 				}
 			}
 	    }
@@ -553,7 +558,7 @@ body {
     		align-items: center;*/
 		    height: 100%;
 		    padding: 20px;
-    		/*border-radius: 10%;*/
+    		border-radius: 20px;
     		display: grid;
 		    grid-template-columns: 1fr;
 		    justify-items: center;
@@ -579,12 +584,26 @@ body {
 		}
 	    .text-result {
 		    background-color: #02161e;
-		    color: #fff;
-		    font-family: 'Lato';
-		    font-size: 16px;
 		    padding: 20px;
-		    /*border-radius: 10%;*/
+		    border-radius: 20px;
 		    margin: 0;
+
+		    p {
+		    	color: #fff;
+		    	font-family: 'Lato';
+		    	font-size: 16px;
+		    	text-indent: 30px;
+    			text-align: justify;
+
+    			b {
+    				color: #3ba19c;
+    				font-weight: 700;
+    			}
+
+    			i {
+    				color: #a1f2bf;
+    			}
+		    }
 
 		    &:last-child {
 		    	margin-bottom: 0;
@@ -599,6 +618,7 @@ body {
 	.page-footer {
 		display: flex;
 		justify-content: space-between;
+		padding: 0 10%;
 
 		.btn-voltar {
 			font-family: 'Teko';
