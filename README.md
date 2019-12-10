@@ -1,25 +1,20 @@
-# README
+# HÁBITOS SAUDÁVEIS E IMC
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Infográfico interativo para ajudar as pessoas a calcularem o seu imc e obter um feedback melhor em relação aos seus hábitos alimentares
 
-Things you may want to cover:
+Para o desenvolvimento desse projeto foram utilizados:
 
-* Ruby version
+* Ruby 2.3.3
 
-* System dependencies
+* Rails 5.2.3
 
-* Configuration
+* Javascript/jquery
 
-* Database creation
+* Bootstrap 4
 
-* Database initialization
+* CSS/SASS
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Icons retirados gratuitamente do Flaticon
 
 * ...
 # infografico_interativo
