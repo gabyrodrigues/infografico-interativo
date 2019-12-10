@@ -32,7 +32,7 @@ class ImcController < ApplicationController
 			@faixa_imc = "carinha-abaixo"
 
 		elsif @imc  >= 18.50 && @imc <= 24.99
-			@result_imc = "<p>Uau, você está dentro da faixa ideal e você tem bons hábitos alimentares! Estar dentro do peso ideal é importante para a promoção da saúde, pois isso ajuda na prevenção de doenças e na garantia da qualidade de vida. Por isso, ao estar abaixo do peso o indicado é buscar o aumento do volume muscular para aumentar de peso de forma saudável. E para quem está acima do peso o indicado é que haja busca por hábitos saudáveis associados à atividade física, para obter uma saúde melhor. Então, continue assim!<p>
+			@result_imc = "<p>Uau, você está dentro da faixa ideal! Estar dentro do peso ideal é importante para a promoção da saúde, pois isso ajuda na prevenção de doenças e na garantia da qualidade de vida. Por isso, ao estar abaixo do peso o indicado é buscar o aumento do volume muscular para aumentar de peso de forma saudável. E para quem está acima do peso o indicado é que haja busca por hábitos saudáveis associados à atividade física, para obter uma saúde melhor. Então, continue assim!<p>
 				<p>Porém, é sempre importante lembrar que cada índice pode indicar necessidades do corpo, porém, não tome atitudes por sua própria conta. Busque sempre um profissional para lhe dar as orientações adequadas e assim alcançar resultados saudáveis e de maneira segura.</p>"
 			@faixa_imc = "carinha-normal"
 
@@ -42,7 +42,7 @@ class ImcController < ApplicationController
 			@faixa_imc = "carinha-sobrepeso"
 
 		elsif @imc >= 30
-			@result_imc = "<p>Sua alimentação requer atenção e seu IMC está bastante acima do ideal, indicando que provavelmente você está em algum nível de obesidade! A obesidade é bastante séria e pode trazer doenças de alto risco para a saúde como: hipertensão, diabetes, infarto e colesterol alto. Então, que tal começar a atentar-se em seus hábitos?</p>
+			@result_imc = "<p>Seu IMC está bastante acima do ideal, indicando que você deve estar em algum nível de obesidade! A obesidade é bastante séria e pode trazer doenças de alto risco para a saúde como: hipertensão, diabetes, infarto e colesterol alto. Então, que tal começar a atentar-se em seus hábitos?</p>
 				<p>Hábitos saudáveis são importantes para a garantia de uma qualidade de vida melhor, sendo super importante incluir na rotina atividades físicas regulares, boas noites de sono e uma alimentação equilibrada. Porém, com as dificuldades do dia a dia se torna bem comum não conseguir tirar um tempo para atividades físicas ou até mesmo conseguir dormir a quantidade recomendada todas as noites (6-8h). Então o recomendado seria atentar-se para uma dieta que leve a uma redução de peso para atingir o IMC recomendado, que seria o índice de 18,50 a 24,99. É importante lembrar que cada índice pode indicar necessidades do corpo, porém, não tome atitudes por sua própria conta. Busque sempre um profissional para lhe dar as orientações adequadas e assim alcançar resultados saudáveis e de maneira segura.</p>"
 			@faixa_imc = "carinha-obeso"
 		end
